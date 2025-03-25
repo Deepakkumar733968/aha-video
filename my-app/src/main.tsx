@@ -6,7 +6,7 @@ import NavBar from "./layouts/NavBar/NavBar.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <NavBar />
+    {/* <NavBar /> */}
     <App />
   </StrictMode>
 );
