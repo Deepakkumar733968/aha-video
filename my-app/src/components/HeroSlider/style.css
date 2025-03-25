@@ -1,0 +1,21 @@
+.image-div-main {
+  width: 100%;
+  height: 100%;
+}
+.hero-img-cls {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0px center;
+}
+.hero-tex-pos-par {
+  position: relative;
+}
+
+.ring-header {
+}
+
+.pos-point {
+  position: absolute;
+  top: 0;
+}

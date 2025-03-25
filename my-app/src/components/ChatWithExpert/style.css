@@ -1,0 +1,17 @@
+.chat-other-main {
+  background-color: #ff7f32de;
+  border-radius: 8px 8px 0 0;
+  box-sizing: border-box;
+  padding: 0 12px;
+  height: 46px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+  line-height: 1;
+  font-size: 0.875em;
+  color: #fff;
+  font-weight: normal;
+  text-shadow: none;
+}
+
+.chat-icon {
+  margin-right: 10px;
+}

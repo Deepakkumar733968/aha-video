@@ -1,0 +1,150 @@
+* {
+  color: #fff;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.nav-main {
+  width: 96%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.scroll {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.92) 6%,
+    rgba(0, 0, 0, 0.45) 63%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.no-scroll {
+  background: rgb(29, 30, 32);
+  z-index: 6;
+}
+
+.left-section-main {
+  display: flex;
+  align-items: center;
+}
+
+.right-section-main {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.lan-aling-main {
+  display: flex;
+  align-items: center;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: #29292966;
+  width: 6.1rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.625rem;
+  font-family: proximaNova, sans-serif;
+  overflow: hidden;
+}
+
+.aha-logo {
+  width: 58px;
+  height: 38px;
+  margin-right: 48px;
+}
+
+.town-arrow-size {
+  width: 1.12rem;
+  height: 1.12rem;
+}
+
+.nav-links-main {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  margin: 0;
+  padding: 0 40px 0 0;
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.f-link {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
+  color: #fff;
+  opacity: 0.7;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+.ser-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.lan-arrow {
+  padding: 0.8rem;
+  color: #fff;
+  width: 2.6rem;
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.subscribe-now-btn {
+  min-width: -webkit-max-content;
+  min-width: max-content;
+  font-size: var(--header-text-size, 14px);
+  padding: 12px 23px;
+  font-weight: 500;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #fff;
+  font-family: proximaNova, sans-serif;
+  background: linear-gradient(0deg, #b61a09 -86.4%, #ff6d2e);
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 4px #00000040;
+  border: none;
+}
+
+.hum-img-log {
+  width: 33px;
+  height: 33px;
+}
+
+.sign-in-text {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.img-in-hum-sign-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
