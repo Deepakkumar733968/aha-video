@@ -31,7 +31,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <section className={`nav-main ${isScrolled ? "no-scroll" : "scroll"}`}>
+    <nav className={`nav-main ${isScrolled ? "no-scroll" : "scroll"}`}>
       <div className="left-section-main">
         <div>
           <img
@@ -80,7 +80,7 @@ const NavBar = () => {
           <p className="sign-in-text">Sign In</p>
         </div>
       </div>
-    </section>
+    </nav>
   );
 };
 
