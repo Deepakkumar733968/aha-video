@@ -1,0 +1,14 @@
+.see-all-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.see-all-left-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.see-all-right-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
