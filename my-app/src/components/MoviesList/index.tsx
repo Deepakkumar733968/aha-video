@@ -12,7 +12,7 @@ interface IMoviesList {
   Premium: boolean;
 }
 
-const MOVIES_LIST: IMoviesList[] = new Array(10).fill({
+const MOVIES_LIST: IMoviesList[] = new Array(30).fill({
   movieListHeader: "New Releases",
   seeAll: "See all",
   image:
