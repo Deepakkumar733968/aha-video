@@ -1,8 +1,8 @@
+import { useRef } from "react";
 import { MovieCard } from "../MovieCard";
 import { SeeAll } from "../SeeAll";
 import "./style.css";
-import { MdArrowBackIos } from "react-icons/md";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 interface IMoviesList {
   movieListHeader: string;
@@ -11,7 +11,7 @@ interface IMoviesList {
   value: string;
   Premium: boolean;
 }
-const MOVIES_LIST: IMoviesList[] = new Array(16).fill({
+const MOVIES_LIST: IMoviesList[] = new Array(30).fill({
   movieListHeader: "New Releases",
   seeAll: "See all",
   image:
@@ -19,14 +19,30 @@ const MOVIES_LIST: IMoviesList[] = new Array(16).fill({
   value: "Mr Housekeeping",
   Premium: true,
 });
+
 export const MoviesList = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount = 600;
+
+      if (direction === "left") {
+        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div className="movies-list-main">
       <div className="arrow-align-main">
-        <div className="arrow-z">
-          <MdArrowBackIos size={28} color="#fff" className=" cursor-pointer" />
+        <div className="arrow-z" onClick={() => scroll("left")}>
+          <MdArrowBackIos size={28} color="#fff" className="cursor-pointer" />
         </div>
-        <div className="arrow-z">
+        <div className="arrow-z" onClick={() => scroll("right")}>
           <MdArrowForwardIos
             size={28}
             color="#fff"
@@ -41,7 +57,7 @@ export const MoviesList = () => {
           className={"movie-list-p-m"}
         />
       )}
-      <div className="hr-list-align">
+      <div className="hr-list-align" ref={scrollRef}>
         {MOVIES_LIST.map((item, index) => (
           <MovieCard
             key={index}
@@ -57,18 +73,3 @@ export const MoviesList = () => {
     </div>
   );
 };
-{
-  /* <img
-            src="https://www.aha.video/chevron-left.788b17bac00f11f9.svg"
-            alt="arrow-left"
-            className="arrow-img-left"
-          /> */
-}
-
-{
-  /* <img
-            src="https://www.aha.video/chevron-right.09c34a1e0c616ffd.svg"
-            alt="arrow-right"
-            className="arrow-img-right"
-          /> */
-}
