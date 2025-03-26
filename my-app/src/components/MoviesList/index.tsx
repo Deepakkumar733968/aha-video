@@ -45,7 +45,8 @@ export const MoviesList = () => {
         {MOVIES_LIST.map((item, index) => (
           <MovieCard
             key={index}
-            imageDivClass={"img-div-hr"}
+            mainDivClass="img-div-hr"
+            imageDivClass={""}
             imageClass={"img-cls-hr"}
             image={item.image}
             value={item.value}
