@@ -49,9 +49,3 @@
 .img-div-hr:hover {
   transform: translateY(-16px);
 }
-
-.arrow-img-left,
-.arrow-img-right {
-  width: 52px;
-  height: 52px;
-}

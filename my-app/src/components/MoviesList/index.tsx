@@ -12,7 +12,7 @@ interface IMoviesList {
   Premium: boolean;
 }
 
-const MOVIES_LIST: IMoviesList[] = new Array(30).fill({
+const MOVIES_LIST: IMoviesList[] = new Array(10).fill({
   movieListHeader: "New Releases",
   seeAll: "See all",
   image:
@@ -30,7 +30,9 @@ export const MoviesList = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       setAtStart(scrollLeft === 0);
-      setAtEnd(scrollLeft + clientWidth >= scrollWidth);
+      setAtEnd(
+        scrollLeft + clientWidth >= scrollWidth || MOVIES_LIST.length <= 8
+      );
     }
   };
 
@@ -59,24 +61,26 @@ export const MoviesList = () => {
 
   return (
     <div className="movies-list-main">
-      <div className="arrow-align-main">
-        <div
-          className={`arrow-z ${atStart ? "hidden-arrow" : ""}`}
-          onClick={() => scroll("left")}
-        >
-          <MdArrowBackIos size={28} color="#fff" className="cursor-pointer" />
+      {MOVIES_LIST.length > 8 && (
+        <div className="arrow-align-main">
+          <div
+            className={`arrow-z ${atStart ? "hidden-arrow" : ""}`}
+            onClick={() => scroll("left")}
+          >
+            <MdArrowBackIos size={28} color="#fff" className="cursor-pointer" />
+          </div>
+          <div
+            className={`arrow-z ${atEnd ? "hidden-arrow" : ""}`}
+            onClick={() => scroll("right")}
+          >
+            <MdArrowForwardIos
+              size={28}
+              color="#fff"
+              className="cursor-pointer"
+            />
+          </div>
         </div>
-        <div
-          className={`arrow-z ${atEnd ? "hidden-arrow" : ""}`}
-          onClick={() => scroll("right")}
-        >
-          <MdArrowForwardIos
-            size={28}
-            color="#fff"
-            className="cursor-pointer"
-          />
-        </div>
-      </div>
+      )}
       {MOVIES_LIST.length && (
         <SeeAll
           heading={"New Releases"}
