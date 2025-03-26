@@ -13,9 +13,43 @@
 }
 
 .ring-header {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 58px;
+}
+
+.hero-yrd-sup {
+  font-size: 17.6px;
+  font-weight: 600;
+  line-height: 1.6875rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: #fff;
+}
+
+.hrd-des {
+  text-wrap: balance;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  margin-top: 14px;
+  line-height: 22px;
+  font-weight: bold;
 }
 
 .pos-point {
   position: absolute;
-  top: 0;
+  top: -15px;
+  width: 600px;
+  padding: 1rem 3rem;
+  max-width: 50%;
 }
+
+/* cursor-pointer */
