@@ -1,5 +1,6 @@
 import "./App.css";
 import { MovieCard } from "./components/MovieCard";
+import { MoviesList } from "./components/MoviesList";
 import { SeeAll } from "./components/SeeAll";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         Premium={false}
       /> */}
       {/* <SeeAll heading={"New Releases"} seeAll={"See all"} className={""} /> */}
+      <MoviesList />
     </main>
   );
 }
