@@ -1,12 +1,12 @@
 import "./style.css";
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { IoChatbubbleEllipses } from "react-icons/io5";
 export const ChatWithExpert = () => {
   return (
-    <div className="chat-other-main">
-      <span className="chat-icon">
-        <IoChatbubbleEllipsesOutline size={18} color="white" />
-      </span>
-      <span>kjkhhih</span>
-    </div>
+    <button className="chat-other-main cursor-pointer">
+      <div className="cht-img-main">
+        <IoChatbubbleEllipses size={20} className="chat-icon" />
+      </div>
+      <p className="chat-des-txt">Chat with an Expert</p>
+    </button>
   );
 };

@@ -1,17 +1,60 @@
 .chat-other-main {
   background-color: #ff7f32de;
+  font-family: "Proxima Nova", sans-serif;
   border-radius: 8px 8px 0 0;
   box-sizing: border-box;
+  margin: 0;
   padding: 0 12px;
   height: 46px;
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
   line-height: 1;
   font-size: 0.875em;
-  color: #fff;
   font-weight: normal;
   text-shadow: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  position: relative;
+  min-width: 12em;
+  max-width: 14em;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  outline: 1px solid #ff7f32de;
+  z-index: 4;
+  position: fixed;
+  bottom: 0;
+  right: 12px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transition: transform 1s;
+  transform: translateY(0px);
+}
+
+.cht-img-main {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.chat-des-txt {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: normal;
+  font-size: 14px;
+  text-align: center;
+  color-scheme: light;
 }
 
 .chat-icon {
+  text-shadow: none;
+  display: inline-block;
+  z-index: 1;
   margin-right: 10px;
+  line-height: 1;
+  vertical-align: top;
 }

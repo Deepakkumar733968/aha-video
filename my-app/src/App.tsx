@@ -11,9 +11,7 @@ function App() {
   return (
     <main>
       <ChatWithExpert />
-      {/* <HeroSlider /> */}
-      {/* <ChatWithExpert /> */}
-      {/* <MoviesList data={MOVIES_LIST} />
+      <HeroSlider />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
@@ -40,7 +38,8 @@ function App() {
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
-      <MoviesList data={MOVIES_LIST} /> */}
+      <MoviesList data={MOVIES_LIST} />
+      <MoviesList data={MOVIES_LIST} />
     </main>
   );
 }
