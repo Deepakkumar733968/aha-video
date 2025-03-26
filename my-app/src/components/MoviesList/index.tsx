@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { MovieCard } from "../MovieCard";
 import { SeeAll } from "../SeeAll";
 import "./style.css";
@@ -11,6 +11,7 @@ interface IMoviesList {
   value: string;
   Premium: boolean;
 }
+
 const MOVIES_LIST: IMoviesList[] = new Array(30).fill({
   movieListHeader: "New Releases",
   seeAll: "See all",
@@ -22,27 +23,53 @@ const MOVIES_LIST: IMoviesList[] = new Array(30).fill({
 
 export const MoviesList = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const updateScrollState = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setAtStart(scrollLeft === 0);
+      setAtEnd(scrollLeft + clientWidth >= scrollWidth);
+    }
+  };
+
+  useEffect(() => {
+    const currentRef = scrollRef.current;
+    if (currentRef) {
+      currentRef.addEventListener("scroll", updateScrollState);
+      updateScrollState();
+    }
+    return () => {
+      if (currentRef) {
+        currentRef.removeEventListener("scroll", updateScrollState);
+      }
+    };
+  }, []);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const { current } = scrollRef;
       const scrollAmount = 600;
-
-      if (direction === "left") {
-        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      } else {
-        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      }
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
     }
   };
 
   return (
     <div className="movies-list-main">
       <div className="arrow-align-main">
-        <div className="arrow-z" onClick={() => scroll("left")}>
+        <div
+          className={`arrow-z ${atStart ? "hidden-arrow" : ""}`}
+          onClick={() => scroll("left")}
+        >
           <MdArrowBackIos size={28} color="#fff" className="cursor-pointer" />
         </div>
-        <div className="arrow-z" onClick={() => scroll("right")}>
+        <div
+          className={`arrow-z ${atEnd ? "hidden-arrow" : ""}`}
+          onClick={() => scroll("right")}
+        >
           <MdArrowForwardIos
             size={28}
             color="#fff"

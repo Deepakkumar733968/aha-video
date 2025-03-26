@@ -20,16 +20,22 @@
 
 .arrow-align-main {
   width: 98%;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  position: absolute !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
   top: 168px;
   left: 16px;
 }
 
 .arrow-z {
   z-index: 6;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden-arrow {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .img-cls-hr {
@@ -38,17 +44,13 @@
 
 .img-div-hr {
   transition: transform 0.4s ease;
-
-  &:hover {
-    transform: translateY(-16px);
-  }
 }
 
-.arrow-img-left {
-  width: 52px;
-  height: 52px;
+.img-div-hr:hover {
+  transform: translateY(-16px);
 }
 
+.arrow-img-left,
 .arrow-img-right {
   width: 52px;
   height: 52px;
