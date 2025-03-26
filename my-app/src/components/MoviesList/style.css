@@ -4,15 +4,15 @@
 }
 
 .movie-list-p-m {
-  padding: 1rem 2rem 0;
-  margin: 0.5rem 0 0 0;
+  padding: 24px 32px 0;
 }
 
 .hr-list-align {
+  padding: 0 32px;
   display: flex;
   overflow-x: scroll;
   gap: 8px;
-  padding: 15px 0 0 0;
+  padding-top: 15px;
   scroll-behavior: smooth;
   box-sizing: content-box;
   scrollbar-width: none;
