@@ -2,6 +2,7 @@ import "./App.css";
 import { MovieCard } from "./components/MovieCard";
 import { MoviesList } from "./components/MoviesList";
 import { SeeAll } from "./components/SeeAll";
+import { MOVIES_LIST } from "./utils/Home/home";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         Premium={false}
       /> */}
       {/* <SeeAll heading={"New Releases"} seeAll={"See all"} className={""} /> */}
-      <MoviesList />
+      <MoviesList data={MOVIES_LIST} />
     </main>
   );
 }
