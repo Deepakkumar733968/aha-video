@@ -31,6 +31,7 @@
 .arrow-z {
   z-index: 6;
   transition: opacity 0.3s ease-in-out;
+  /* background: linear-gradient(rgb(59, 64, 70) 9.38%, rgb(45, 48, 55)); */
 }
 
 .hidden-arrow {
