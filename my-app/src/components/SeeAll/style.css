@@ -1,6 +1,7 @@
 .see-all-main {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .see-all-left-header {

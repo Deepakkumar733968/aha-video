@@ -1,3 +1,55 @@
 .movies-list-main {
   background-color: rgb(18, 18, 18);
+  position: relative;
+}
+
+.movie-list-p-m {
+  padding: 1rem 2rem 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.hr-list-align {
+  display: flex;
+  overflow-x: scroll;
+  gap: 8px;
+  padding: 15px 0 0 0;
+  scroll-behavior: smooth;
+  box-sizing: content-box;
+  scrollbar-width: none;
+}
+
+.arrow-align-main {
+  width: 98%;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  position: absolute !important;
+  top: 168px;
+  left: 16px;
+}
+
+.arrow-z {
+  z-index: 6;
+}
+
+.img-cls-hr {
+  border-radius: 8px;
+}
+
+.img-div-hr {
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: translateY(-16px);
+  }
+}
+
+.arrow-img-left {
+  width: 52px;
+  height: 52px;
+}
+
+.arrow-img-right {
+  width: 52px;
+  height: 52px;
 }
