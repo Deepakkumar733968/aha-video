@@ -124,11 +124,13 @@ const Footer = () => {
           <a href="https://quickplay.com/" className="powered-by-link">
             Powered by
           </a>
-          <img
-            src="	https://www.aha.video/assets/images/logo/quickplay-logo_scale_w_1400.png"
-            alt="play-image"
-            className="play-img"
-          />
+          <a href="https://quickplay.com/">
+            <img
+              src="	https://www.aha.video/assets/images/logo/quickplay-logo_scale_w_1400.png"
+              alt="play-image"
+              className="play-img"
+            />
+          </a>
         </div>
       </div>
     </footer>
