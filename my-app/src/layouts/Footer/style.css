@@ -77,6 +77,8 @@
 .play-img {
   width: 100px;
   height: 19px;
+  display: flex;
+  align-items: center;
 }
 
 .powered-by-main {
