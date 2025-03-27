@@ -7,7 +7,7 @@ import Footer from "./layouts/Footer/Footer.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* <NavBar /> */}
+    <NavBar />
     <App />
     <Footer />
   </StrictMode>
