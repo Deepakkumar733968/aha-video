@@ -7,6 +7,10 @@
   padding: 24px 32px 0;
 }
 
+.add-rel-main {
+  position: relative;
+}
+
 .hr-list-align {
   padding: 0 32px;
   display: flex;
@@ -27,17 +31,48 @@
   top: 168px;
   left: 16px;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
 }
-
 .movies-list-main:hover .arrow-align-main {
   opacity: 1;
+}
+
+.hover-bg-col-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+}
+
+.bg-w-h-left {
+  width: 8%;
+  height: 300px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0.43) 20%,
+    rgba(0, 0, 0, 0.8) 66%
+  );
+  z-index: 4;
+}
+.bg-w-h-right {
+  width: 8%;
+  height: 300px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0.43) 20%,
+    rgba(0, 0, 0, 0.8) 66%
+  );
+  z-index: 4;
 }
 
 .arrow-z {
   z-index: 6;
   transition: opacity 0.3s ease-in-out;
-  /* background: linear-gradient(rgb(59, 64, 70) 9.38%, rgb(45, 48, 55)); */
 }
 
 .hidden-arrow {
@@ -56,3 +91,16 @@
 .img-div-hr:hover {
   transform: translateY(-16px);
 }
+
+/* background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0.43) 20%,
+    rgba(0, 0, 0, 0.8) 66%
+  ); */
+/* background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0.43) 20%,
+    rgba(0, 0, 0, 0.8) 66%
+  ); */

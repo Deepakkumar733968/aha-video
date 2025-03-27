@@ -51,25 +51,36 @@ export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
   return (
     <div className="movies-list-main">
       {data.length > 8 && (
-        <div className="arrow-align-main">
-          <div
-            className={`arrow-z ${atStart ? "hidden-arrow" : ""}`}
-            onClick={() => scroll("left")}
-          >
-            <MdArrowBackIos size={28} color="#fff" className="cursor-pointer" />
+        <div className="add-rel-main">
+          <div className="hover-bg-col-main">
+            <div className="bg-w-h-left"></div>
+            <div className="bg-w-h-right"></div>
           </div>
-          <div
-            className={`arrow-z ${atEnd ? "hidden-arrow" : ""}`}
-            onClick={() => scroll("right")}
-          >
-            <MdArrowForwardIos
-              size={28}
-              color="#fff"
-              className="cursor-pointer"
-            />
+          <div className="arrow-align-main">
+            <div
+              className={`arrow-z ${atStart ? "hidden-arrow" : ""}`}
+              onClick={() => scroll("left")}
+            >
+              <MdArrowBackIos
+                size={28}
+                color="#fff"
+                className="cursor-pointer"
+              />
+            </div>
+            <div
+              className={`arrow-z ${atEnd ? "hidden-arrow" : ""}`}
+              onClick={() => scroll("right")}
+            >
+              <MdArrowForwardIos
+                size={28}
+                color="#fff"
+                className="cursor-pointer"
+              />
+            </div>
           </div>
         </div>
       )}
+
       {data.length && (
         <SeeAll
           heading={data[0]?.movieListHeader}
