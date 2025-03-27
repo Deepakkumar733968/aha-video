@@ -20,7 +20,7 @@ export const ChatWithExpert = () => {
     <button
       className="chat-other-main cursor-pointer"
       style={{
-        transform: isAtPageEnd ? "translateY(-78px)" : "translateY(0px)",
+        transform: isAtPageEnd ? "translateY(-79px)" : "translateY(0px)",
       }}
     >
       <div className="cht-img-main">
