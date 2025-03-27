@@ -10,7 +10,7 @@ import { MOVIES_LIST } from "./utils/Home/home";
 function App() {
   return (
     <main>
-      <ChatWithExpert />
+      {/* <ChatWithExpert /> */}
       <HeroSlider />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />

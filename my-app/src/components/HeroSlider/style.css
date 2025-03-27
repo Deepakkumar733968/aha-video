@@ -1,18 +1,23 @@
-.image-div-main {
+.hero-main {
   width: 100%;
-  height: 100%;
-}
-.hero-img-cls {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0px center;
-}
-.hero-tex-pos-par {
-  position: relative;
+  min-height: 100vh;
+  background-image: url("https://image-resizer-cloud-api.akamaized.net/image/754EBB87-954E-45FA-9495-581ED92ED78B/0-16x9.jpg?width=1250&updatedTime=2025-03-20T12:14:46Z&dt=Web");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.ring-header {
+.left-pos-main {
+  width: 600px;
+  padding: 1rem 3rem;
+  max-width: 50%;
+  position: absolute;
+  top: 30%;
+  box-sizing: border-box;
+  z-index: 6;
+}
+
+.pos-hed {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 32px;
@@ -20,36 +25,59 @@
   line-height: 58px;
 }
 
-.hero-yrd-sup {
+.pos-sup-hed {
   font-size: 17.6px;
   font-weight: 600;
   line-height: 1.6875rem;
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 14px;
-  color: #fff;
+  margin-top: 0.3rem;
 }
 
-.hrd-des {
+.pos-des {
+  font-size: 16px;
   text-wrap: balance;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 16px;
-  margin-top: 14px;
+  margin-top: 0.3rem;
   line-height: 22px;
   font-weight: bold;
 }
 
-.pos-point {
-  position: absolute;
-  top: -15px;
-  width: 600px;
-  padding: 1rem 3rem;
-  max-width: 50%;
+.l-a-r-main {
+  display: flex;
+  width: 100%;
+}
+.m-left-main {
+  width: 30%;
+  height: 100vh;
+  background-color: #121212;
+  border: 3px;
 }
 
-/* cursor-pointer */
+.m-right-main {
+  width: 70%;
+  height: 100vh;
+}
+
+.bg-left-div-main {
+  height: 100%;
+  display: flex;
+  width: 125%;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      266.91deg,
+      rgba(18, 18, 18, 0) 49.99%,
+      rgba(18, 18, 18, 0.5) 57.43%,
+      rgba(18, 18, 18, 0.8) 63.83%,
+      #121212 75.07%
+    ),
+    linear-gradient(180deg, rgba(18, 18, 18, 0) 80.52%, #121212 96.26%);
+}
