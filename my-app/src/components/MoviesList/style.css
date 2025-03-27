@@ -37,6 +37,12 @@
   opacity: 1;
 }
 
+.hidden-bg {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .hover-bg-col-main {
   width: 100%;
   display: flex;
@@ -45,22 +51,30 @@
   position: absolute;
   top: 30px;
   left: 0px;
+  opacity: 0;
+}
+
+.movies-list-main:hover .hover-bg-col-main {
+  opacity: 1;
 }
 
 .bg-w-h-left {
   width: 8%;
   height: 300px;
+  border-radius: 0 16px 16px 0;
   background: linear-gradient(
-    90deg,
+    270deg,
     rgba(255, 255, 255, 0),
     rgba(0, 0, 0, 0.43) 20%,
     rgba(0, 0, 0, 0.8) 66%
   );
   z-index: 4;
 }
+
 .bg-w-h-right {
   width: 8%;
   height: 300px;
+  border-radius: 16px 0px 0px 16px;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0),

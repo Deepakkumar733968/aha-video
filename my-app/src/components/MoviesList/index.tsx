@@ -20,8 +20,12 @@ export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
   const updateScrollState = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setAtStart(scrollLeft === 0);
-      setAtEnd(scrollLeft + clientWidth >= scrollWidth || data.length <= 8);
+
+      const isAtStart = scrollLeft <= 0;
+      const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+
+      setAtStart(isAtStart);
+      setAtEnd(isAtEnd);
     }
   };
 
@@ -53,8 +57,8 @@ export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
       {data.length > 8 && (
         <div className="add-rel-main">
           <div className="hover-bg-col-main">
-            <div className="bg-w-h-left"></div>
-            <div className="bg-w-h-right"></div>
+            <div className={`bg-w-h-left ${atStart ? "hidden-bg" : ""}`}></div>
+            <div className={`bg-w-h-right ${atEnd ? "hidden-bg" : ""}`}></div>
           </div>
           <div className="arrow-align-main">
             <div
