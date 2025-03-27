@@ -64,7 +64,7 @@
   height: 100vh;
 }
 
-.bg-left-div-main {
+/* .bg-left-div-main {
   height: 100%;
   display: flex;
   width: 125%;
@@ -80,4 +80,27 @@
       #121212 75.07%
     ),
     linear-gradient(180deg, rgba(18, 18, 18, 0) 80.52%, #121212 96.26%);
+} */
+
+.last-left-carousel-main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  width: 18%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.left-carousel-img {
+  width: 85px;
+  height: 48px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+.all-btn-img-ali-main {
+  display: flex;
+  align-items: center;
 }
