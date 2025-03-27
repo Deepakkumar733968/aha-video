@@ -16,14 +16,13 @@ export const HeroSlider = () => {
           fun. But as notifications arrive, a lot of secrets get revealed.
         </p>
       </div>
-      {/* <div className="bg-left-div-main"></div> */}
       <div className="l-a-r-main">
         <div className="bg-left-div-main"></div>
-        <div className="m-left-main">{/* <h1>left</h1> */}</div>
-        <div className="m-right-main">{/* <h1>right</h1> */}</div>
+        <div className="m-left-main"></div>
+        <div className="m-right-main"></div>
       </div>
       <div className="all-btn-img-ali-main">
-        <MdKeyboardArrowLeft size={26} />
+        <MdKeyboardArrowLeft size={26} className="add-arr-hover" />
         <div className="last-left-carousel-main">
           <div>
             <img
@@ -47,7 +46,7 @@ export const HeroSlider = () => {
             />
           </div>
         </div>
-        <MdKeyboardArrowRight size={26} />
+        <MdKeyboardArrowRight size={26} className="add-arr-hover" />
       </div>
     </section>
   );
