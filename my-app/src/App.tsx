@@ -11,7 +11,7 @@ function App() {
   return (
     <main>
       <ChatWithExpert />
-      {/* <HeroSlider /> */}
+      <HeroSlider />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
