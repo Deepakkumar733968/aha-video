@@ -29,7 +29,6 @@
   right: 12px;
   -webkit-font-smoothing: subpixel-antialiased;
   transition: transform 1s;
-  transform: translateY(0px);
 }
 
 .cht-img-main {
