@@ -70,7 +70,7 @@
 .bg-left-div-main {
   height: 100%;
   display: flex;
-  width: 100%;
+  width: 125%;
   flex-direction: column;
   justify-content: center;
   position: absolute;
@@ -90,7 +90,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
-  width: 18%;
+  width: 20%;
   overflow-x: scroll;
   scrollbar-width: none;
 }

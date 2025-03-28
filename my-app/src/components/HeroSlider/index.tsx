@@ -1,12 +1,30 @@
 import "./style.css";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
-export const HeroSlider = () => {
+import { IHeroCarousel } from "../../utils/HeroCarousel/heroCarousel";
+import { useEffect, useState } from "react";
+export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [data.length]);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+  };
   return (
     <section
       className="hero-main cursor-pointer"
       style={{
-        backgroundImage: `url("https://image-resizer-cloud-api.akamaized.net/image/754EBB87-954E-45FA-9495-581ED92ED78B/0-16x9.jpg?width=1250&updatedTime=2025-03-20T12:14:46Z&dt=Web")`,
+        backgroundImage: `url(${data[currentIndex]?.heroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -14,47 +32,46 @@ export const HeroSlider = () => {
     >
       <div className="left-pos-main">
         <div>
-          <h1 className="pos-hed">Ring Ring</h1>
-          <p className="pos-sup-hed">2025 • 1h 59m • Psychological Thriller</p>
+          <h1 className="pos-hed">{data[currentIndex]?.heading}</h1>
+          <p className="pos-sup-hed">{data[currentIndex]?.subHeading}</p>
         </div>
-        <p className="pos-des">
-          Ring Ring is a comedy family drama movie. seven close friends gather
-          for a birthday party dinner. When one suggests a game, place their
-          phones on the table and share every call and message. At first, it was
-          fun. But as notifications arrive, a lot of secrets get revealed.
-        </p>
+        <p className="pos-des">{data[currentIndex]?.description}</p>
       </div>
       <div className="l-a-r-main">
         <div className="bg-left-div-main"></div>
         <div className="m-left-main"></div>
-        <div className="m-right-main"></div>
+        <div className="m-right-main">
+          {/* <video width="600" controls className="video-main">
+            <source src={data[currentIndex]?.heroVideo} type="video/mp4" />
+          </video> */}
+        </div>
       </div>
       <div className="all-btn-img-ali-main">
-        <MdKeyboardArrowLeft size={26} className="add-arr-hover" />
+        <MdKeyboardArrowLeft
+          size={26}
+          className="add-arr-hover"
+          onClick={prevSlide}
+        />
+
         <div className="last-left-carousel-main">
-          <div>
+          {data.map((item, index) => (
             <img
-              src="https://image-resizer-cloud-api.akamaized.net/image/F2E3201D-E2C8-4BF0-927C-52DF484F8CBE/0-16x9.jpg?width=160&updatedTime=2025-03-27T09:21:25Z&dt=Web"
-              alt="small-carousel-img"
-              className="left-carousel-img"
+              key={index}
+              src={item.smallHeroImage}
+              alt="carousel-thumbnail"
+              className={`left-carousel-img ${
+                index === currentIndex ? "active" : ""
+              }`}
+              onClick={() => setCurrentIndex(index)}
             />
-          </div>
-          <div>
-            <img
-              src="https://image-resizer-cloud-api.akamaized.net/image/F2E3201D-E2C8-4BF0-927C-52DF484F8CBE/0-16x9.jpg?width=160&updatedTime=2025-03-27T09:21:25Z&dt=Web"
-              alt="small-carousel-img"
-              className="left-carousel-img"
-            />
-          </div>
-          <div>
-            <img
-              src="https://image-resizer-cloud-api.akamaized.net/image/F2E3201D-E2C8-4BF0-927C-52DF484F8CBE/0-16x9.jpg?width=160&updatedTime=2025-03-27T09:21:25Z&dt=Web"
-              alt="small-carousel-img"
-              className="left-carousel-img"
-            />
-          </div>
+          ))}
         </div>
-        <MdKeyboardArrowRight size={26} className="add-arr-hover" />
+
+        <MdKeyboardArrowRight
+          size={26}
+          className="add-arr-hover"
+          onClick={nextSlide}
+        />
       </div>
     </section>
   );
