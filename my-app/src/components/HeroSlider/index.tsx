@@ -3,7 +3,15 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 export const HeroSlider = () => {
   return (
-    <section className="hero-main cursor-pointer">
+    <section
+      className="hero-main cursor-pointer"
+      style={{
+        backgroundImage: `url("https://image-resizer-cloud-api.akamaized.net/image/754EBB87-954E-45FA-9495-581ED92ED78B/0-16x9.jpg?width=1250&updatedTime=2025-03-20T12:14:46Z&dt=Web")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="left-pos-main">
         <div>
           <h1 className="pos-hed">Ring Ring</h1>
