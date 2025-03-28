@@ -1,10 +1,11 @@
 import "./style.css";
-import { MdKeyboardArrowLeft } from "react-icons/md";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IHeroCarousel } from "../../utils/HeroCarousel/heroCarousel";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const thumbnailRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,13 +14,23 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
     return () => clearInterval(interval);
   }, [data.length]);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
-  };
+  useEffect(() => {
+    if (thumbnailRef.current) {
+      const selectedImage = thumbnailRef.current.children[
+        currentIndex
+      ] as HTMLElement;
+      if (selectedImage) {
+        thumbnailRef.current.scrollTo({
+          left:
+            selectedImage.offsetLeft -
+            thumbnailRef.current.offsetWidth / 2 +
+            selectedImage.offsetWidth / 2,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [currentIndex]);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
-  };
   return (
     <section
       className="hero-main cursor-pointer"
@@ -50,27 +61,31 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
         <MdKeyboardArrowLeft
           size={26}
           className="add-arr-hover"
-          onClick={prevSlide}
+          onClick={() =>
+            setCurrentIndex(
+              (prevIndex) => (prevIndex - 1 + data.length) % data.length
+            )
+          }
         />
-
-        <div className="last-left-carousel-main">
+        <div className="last-left-carousel-main" ref={thumbnailRef}>
           {data.map((item, index) => (
             <img
               key={index}
               src={item.smallHeroImage}
               alt="carousel-thumbnail"
               className={`left-carousel-img ${
-                index === currentIndex ? "active" : ""
+                index === currentIndex ? "selected" : ""
               }`}
               onClick={() => setCurrentIndex(index)}
             />
           ))}
         </div>
-
         <MdKeyboardArrowRight
           size={26}
           className="add-arr-hover"
-          onClick={nextSlide}
+          onClick={() =>
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length)
+          }
         />
       </div>
     </section>
