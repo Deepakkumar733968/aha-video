@@ -51,11 +51,7 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
       <div className="l-a-r-main">
         <div className="bg-left-div-main"></div>
         <div className="m-left-main"></div>
-        <div className="m-right-main">
-          {/* <video width="600" controls className="video-main">
-            <source src={data[currentIndex]?.heroVideo} type="video/mp4" />
-          </video> */}
-        </div>
+        <div className="m-right-main"></div>
       </div>
       <div className="all-btn-img-ali-main">
         <MdKeyboardArrowLeft
