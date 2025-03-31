@@ -3,7 +3,7 @@ interface ISeeAll {
   heading: string;
   seeAll: string;
   className: string;
-  showSeeAll: boolean;
+  showSeeAll?: boolean;
 }
 
 export const SeeAll = ({ heading, seeAll, className, showSeeAll }: ISeeAll) => {
