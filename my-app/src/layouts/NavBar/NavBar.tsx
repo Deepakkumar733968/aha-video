@@ -68,6 +68,10 @@ const NavBar = () => {
             className="town-arrow-size"
           />
         </div>
+        {/* <select className="lan-aling-main cursor-pointer">
+          <option value="tamil">Tamil</option>
+          <option value="english">English</option>
+        </select> */}
         <button className="subscribe-now-btn">Subscribe Now</button>
         <div className="img-in-hum-sign-main">
           <div className="hum-bg-main">
