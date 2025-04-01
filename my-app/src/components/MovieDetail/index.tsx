@@ -73,27 +73,39 @@ export const MovieDetail = () => {
                   "https://image-resizer-cloud-api.akamaized.net/image/hari-baskar/0-1x1.jpg?width=230&updatedTime=2025-03-25T06:18:28Z"
                 }
                 value={"Hari Baskar"}
+                imageDivClass="mov-min-detail-size"
+                imageClass="add-mov-border"
+                cardTitleClass="mov-dea-title"
                 showPremium={false}
               />
               <MovieCard
                 image={
-                  "https://image-resizer-cloud-api.akamaized.net/image/hari-baskar/0-1x1.jpg?width=230&updatedTime=2025-03-25T06:18:28Z"
+                  "https://image-resizer-cloud-api.akamaized.net/image/losliya-%20mariyanesan/0-1x1.jpg?width=110&updatedTime=2025-03-25T06:18:28Z"
                 }
                 value={"Hari Baskar"}
+                imageDivClass="mov-min-detail-size"
+                imageClass="add-mov-border"
+                cardTitleClass="mov-dea-title"
                 showPremium={false}
               />
               <MovieCard
                 image={
-                  "https://image-resizer-cloud-api.akamaized.net/image/hari-baskar/0-1x1.jpg?width=230&updatedTime=2025-03-25T06:18:28Z"
+                  "https://image-resizer-cloud-api.akamaized.net/image/ilavarasu/0-1x1.jpg?width=110&updatedTime=2025-03-25T06:18:28Z"
                 }
                 value={"Hari Baskar"}
+                imageDivClass="mov-min-detail-size"
+                imageClass="add-mov-border"
+                cardTitleClass="mov-dea-title"
                 showPremium={false}
               />
               <MovieCard
                 image={
-                  "https://image-resizer-cloud-api.akamaized.net/image/hari-baskar/0-1x1.jpg?width=230&updatedTime=2025-03-25T06:18:28Z"
+                  "https://image-resizer-cloud-api.akamaized.net/image/shah-ra/0-1x1.jpg?width=110&updatedTime=2025-03-25T06:18:28Z"
                 }
                 value={"Hari Baskar"}
+                imageDivClass="mov-min-detail-size"
+                imageClass="add-mov-border"
+                cardTitleClass="mov-dea-title"
                 showPremium={false}
               />
             </div>

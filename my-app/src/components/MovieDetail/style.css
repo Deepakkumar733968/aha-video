@@ -334,3 +334,26 @@
   color: red;
   line-height: 22px;
 }
+
+.mov-min-detail-size {
+  width: 96px;
+  height: 96px;
+}
+
+.add-mov-border {
+  border-radius: 8px;
+}
+
+.mov-dea-title {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 11px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  align-self: start;
+}
