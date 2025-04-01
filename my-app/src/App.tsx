@@ -8,9 +8,9 @@ import { MOVIES_LIST } from "./utils/Home/home";
 function App() {
   return (
     <main>
-      <MovieDetail />
-      {/* <HeroSlider data={HERO_CAROUSEL} />
-      <MoviesList data={MOVIES_LIST} />
+      {/* <MovieDetail /> */}
+      <HeroSlider data={HERO_CAROUSEL} />
+      {/* <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
       <MoviesList data={MOVIES_LIST} />
