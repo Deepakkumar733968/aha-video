@@ -1,5 +1,3 @@
-// src/api.ts
-
 export const fetchCatalogData = async (): Promise<any> => {
   const url =
     "https://catalog-service-cdn.api.aha.firstlight.ai/catalog/storefront/landingscreen?ipr=true&ivg=false&sfInfo=true&itvod=true&acl=ta&reg=in&dt=mobileweb&cPageNumber=1&cPageSize=5";
