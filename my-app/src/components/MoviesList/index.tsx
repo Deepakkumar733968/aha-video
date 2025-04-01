@@ -54,7 +54,7 @@ export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
 
   return (
     <div className="movies-list-main">
-      {data.length > 8 && (
+      {data.length > 6 && (
         <div className="add-rel-main">
           <div className="hover-bg-col-main">
             <div className={`bg-w-h-left ${atStart ? "hidden-bg" : ""}`}></div>
@@ -90,6 +90,7 @@ export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
           heading={data[0]?.movieListHeader}
           seeAll={data[0]?.seeAll}
           className={"movie-list-p-m"}
+          showSeeAll={data.length > 8 ? true : false}
         />
       )}
       <div className="hr-list-align" ref={scrollRef}>
