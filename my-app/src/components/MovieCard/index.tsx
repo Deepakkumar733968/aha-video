@@ -7,6 +7,7 @@ interface ICardData {
   image: string;
   value: string;
   showPremium?: boolean;
+  cardTitleClass?: string;
 }
 
 export const MovieCard = ({
@@ -16,6 +17,7 @@ export const MovieCard = ({
   image,
   value,
   showPremium = true,
+  cardTitleClass = "",
 }: ICardData) => {
   return (
     <div className={`${mainDivClass} img-card-main`}>
@@ -36,7 +38,7 @@ export const MovieCard = ({
           className={`${imageClass} img-size`}
         />
       </div>
-      <p className="img-crd-des">{value}</p>
+      <p className={`img-crd-des ${cardTitleClass}`}>{value}</p>
     </div>
   );
 };

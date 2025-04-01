@@ -12,7 +12,15 @@ interface IMoviesList {
   Premium: boolean;
 }
 
-export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
+export const MoviesList = ({
+  data,
+  listCardTitleClass,
+  listCardDivClass,
+}: {
+  data: IMoviesList[];
+  listCardTitleClass?: string;
+  listCardDivClass?: string;
+}) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -98,11 +106,12 @@ export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
           <MovieCard
             key={index}
             mainDivClass="img-div-hr"
-            imageDivClass={""}
+            imageDivClass={listCardDivClass}
             imageClass={"img-cls-hr"}
             image={item.image}
             value={item.value}
             showPremium={item.Premium}
+            cardTitleClass={listCardTitleClass}
           />
         ))}
       </div>
