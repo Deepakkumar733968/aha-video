@@ -102,7 +102,7 @@ export const MoviesList = ({ data }: { data: IMoviesList[] }) => {
             imageClass={"img-cls-hr"}
             image={item.image}
             value={item.value}
-            Premium={item.Premium}
+            showPremium={item.Premium}
           />
         ))}
       </div>

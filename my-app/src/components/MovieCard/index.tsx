@@ -6,7 +6,7 @@ interface ICardData {
   imageClass?: string;
   image: string;
   value: string;
-  Premium?: boolean;
+  showPremium?: boolean;
 }
 
 export const MovieCard = ({
@@ -15,11 +15,11 @@ export const MovieCard = ({
   imageClass = "",
   image,
   value,
-  Premium = true,
+  showPremium = true,
 }: ICardData) => {
   return (
     <div className={`${mainDivClass} img-card-main`}>
-      {Premium && (
+      {showPremium && (
         <span className="add-premium-pos">
           <img
             src="https://www.aha.video/tag-icon.4a97c58d9b826d7d.svg"
