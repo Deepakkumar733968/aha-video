@@ -7,7 +7,7 @@ export const ChatWithExpert = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.innerHeight + window.scrollY + 50;
+      const scrollPosition = window.innerHeight + window.scrollY + 66;
       const pageHeight = document.documentElement.scrollHeight;
       setIsAtPageEnd(scrollPosition >= pageHeight - 10);
     };
