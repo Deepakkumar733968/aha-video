@@ -16,10 +16,12 @@ export const MoviesList = ({
   data,
   listCardTitleClass,
   listCardDivClass,
+  listCardImageClass,
 }: {
   data: IMoviesList[];
   listCardTitleClass?: string;
   listCardDivClass?: string;
+  listCardImageClass?: string;
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
@@ -107,7 +109,7 @@ export const MoviesList = ({
             key={index}
             mainDivClass="img-div-hr"
             imageDivClass={listCardDivClass}
-            imageClass={"img-cls-hr"}
+            imageClass={`img-cls-hr ${listCardImageClass}`}
             image={item.image}
             value={item.value}
             showPremium={item.Premium}
