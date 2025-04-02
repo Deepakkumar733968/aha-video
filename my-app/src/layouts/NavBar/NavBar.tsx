@@ -2,7 +2,10 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchCatalogData } from "../../api";
+import { useLocation } from "react-router-dom";
 const NavBar = () => {
+  const [activeLink, setActiveLink] = useState<string>("");
+
   //
   const [catalog, setCatalog] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -27,6 +30,12 @@ const NavBar = () => {
   }, []);
 
   //
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
   interface IfooterList {
     link: string;
     text: string;
@@ -71,7 +80,11 @@ const NavBar = () => {
           <ul className="nav-links-main">
             {footerList.map(({ link, text }, index) => (
               <li key={index}>
-                <Link to={link} className="f-link">
+                <Link
+                  to={link}
+                  className="f-link"
+                  style={{ opacity: activeLink === link ? 1 : 0.7 }}
+                >
                   {text}
                 </Link>
               </li>
