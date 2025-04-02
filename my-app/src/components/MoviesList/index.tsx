@@ -14,14 +14,20 @@ interface IMoviesList {
 
 export const MoviesList = ({
   data,
-  listCardTitleClass,
-  listCardDivClass,
-  listCardImageClass,
+  listCardTitleClass = "",
+  listCardDivClass = "",
+  listCardImageClass = "",
+  hoverBgClass = "",
+  hoverBgSize = "",
+  ArrowMainClass = "",
 }: {
   data: IMoviesList[];
   listCardTitleClass?: string;
   listCardDivClass?: string;
   listCardImageClass?: string;
+  hoverBgClass?: string;
+  ArrowMainClass?: string;
+  hoverBgSize?: string;
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
@@ -66,11 +72,19 @@ export const MoviesList = ({
     <div className="movies-list-main">
       {data.length > 6 && (
         <div className="add-rel-main">
-          <div className="hover-bg-col-main">
-            <div className={`bg-w-h-left ${atStart ? "hidden-bg" : ""}`}></div>
-            <div className={`bg-w-h-right ${atEnd ? "hidden-bg" : ""}`}></div>
+          <div className={`${hoverBgClass} hover-bg-col-main`}>
+            <div
+              className={`${hoverBgSize} bg-w-h-left ${
+                atStart ? "hidden-bg" : ""
+              }`}
+            ></div>
+            <div
+              className={`${hoverBgSize} bg-w-h-right ${
+                atEnd ? "hidden-bg" : ""
+              }`}
+            ></div>
           </div>
-          <div className="arrow-align-main">
+          <div className={`${ArrowMainClass} arrow-align-main`}>
             <div
               className={`arrow-z ${atStart ? "hidden-arrow" : ""}`}
               onClick={() => scroll("left")}

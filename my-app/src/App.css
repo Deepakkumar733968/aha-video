@@ -9,6 +9,29 @@
   cursor: pointer;
 }
 
+/* component style */
+.mov-un-detail-img-size {
+  width: 212px !important;
+  height: 119px !important;
+}
+
+.mov-lis-arr-hov-w-h {
+  width: 134px !important;
+  height: 158px !important;
+}
+
+.mov-lis-arr-pos {
+  top: 118px !important;
+  left: 16px !important;
+}
+
+.mov-pos-ali {
+  top: 50px !important;
+  left: 0px !important;
+}
+
+/* component style */
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
