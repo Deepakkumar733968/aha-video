@@ -22,3 +22,46 @@
 // }, []);
 
 // //
+
+// function App() {
+//   return (
+//     <main>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/movies" element={<MoviesList data={MOVIES_LIST} />} />
+//         <Route path="/movie/:id" element={<MovieDetail />} />
+//       </Routes>
+//       {/* static card data */}
+//       {/* <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} />
+//       <MoviesList data={MOVIES_LIST} /> */}
+//     </main>
+//   );
+// }
+
+// export default App;
