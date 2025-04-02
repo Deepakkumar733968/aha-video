@@ -66,7 +66,7 @@ export const MovieDetail = () => {
             <div className="selected-tap">Cast</div>
             <div className="not-selected-tap">Details</div>
           </div>
-          <div className="taps-img-detail-main">
+          {/* <div className="taps-img-detail-main">
             <div className="img-detail-ali">
               <MovieCard
                 image={
@@ -115,7 +115,7 @@ export const MovieDetail = () => {
               <p className="detail-text-heading">Studio</p>
               <p className="detail-text-ans">Sri Thenandal Films</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="movie-l-a-r-main">
