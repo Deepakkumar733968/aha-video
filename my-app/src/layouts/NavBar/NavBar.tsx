@@ -34,11 +34,13 @@ const NavBar = () => {
     <nav className={`nav-main ${isScrolled ? "no-scroll" : "scroll"}`}>
       <div className="left-section-main">
         <div>
-          <img
-            src="https://www.aha.video/aha-logo.2a3e1475cd784cdc.svg"
-            alt="aha-logo"
-            className="aha-logo cursor-pointer"
-          />
+          <Link to={"/"}>
+            <img
+              src="https://www.aha.video/aha-logo.2a3e1475cd784cdc.svg"
+              alt="aha-logo"
+              className="aha-logo cursor-pointer"
+            />
+          </Link>
         </div>
         <div>
           <ul className="nav-links-main">
