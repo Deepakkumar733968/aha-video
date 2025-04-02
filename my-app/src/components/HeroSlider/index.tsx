@@ -28,7 +28,7 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
   };
 
   return (
-    <section
+    <div
       className="hero-main cursor-pointer"
       style={{
         backgroundImage: `url(${data[currentIndex]?.heroImage})`,
@@ -77,6 +77,6 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
           onClick={nextSlide}
         />
       </div>
-    </section>
+    </div>
   );
 };
