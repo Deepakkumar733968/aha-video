@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import "./style.css";
-
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   interface IfooterList {
     link: string;
@@ -8,11 +8,11 @@ const NavBar = () => {
   }
 
   const footerList: IfooterList[] = [
-    { link: "#", text: "Home" },
-    { link: "#", text: "Movies" },
-    { link: "#", text: "Shows" },
-    { link: "#", text: "Offers" },
-    { link: "#", text: "My aha" },
+    { link: "/", text: "Home" },
+    { link: "/movies", text: "Movies" },
+    { link: "/shows", text: "Shows" },
+    { link: "/offers", text: "Offers" },
+    { link: "/myaha", text: "My aha" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,9 +44,9 @@ const NavBar = () => {
           <ul className="nav-links-main">
             {footerList.map(({ link, text }, index) => (
               <li key={index}>
-                <a href={link} className="f-link">
+                <Link to={link} className="f-link">
                   {text}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
