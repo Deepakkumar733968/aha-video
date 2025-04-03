@@ -37,30 +37,27 @@ export const MoviesList = ({
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
 
-      const isAtStart = scrollLeft <= 0;
-      const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
-
-      setAtStart(isAtStart);
-      setAtEnd(isAtEnd);
+      setAtStart(scrollLeft === 0);
+      setAtEnd(scrollLeft + clientWidth >= scrollWidth);
     }
   };
 
   useEffect(() => {
     const currentRef = scrollRef.current;
-    if (currentRef) {
-      currentRef.addEventListener("scroll", updateScrollState);
-      updateScrollState();
-    }
+    if (!currentRef) return;
+
+    const handleScroll = () => updateScrollState();
+    currentRef.addEventListener("scroll", handleScroll);
+    updateScrollState();
+
     return () => {
-      if (currentRef) {
-        currentRef.removeEventListener("scroll", updateScrollState);
-      }
+      currentRef?.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = 600;
+      const scrollAmount = scrollRef.current.offsetWidth;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -68,27 +65,24 @@ export const MoviesList = ({
     }
   };
 
-  // console.log(movies.cd[0], "movies-data");
-
   return (
     <div className="movies-list-main">
-      {movies.length > 6 && (
+      {movies.cd.length > 6 && (
         <div className="add-rel-main">
           <div className={`${hoverBgClass} hover-bg-col-main`}>
             <div
-              className={`${hoverBgSize} bg-w-h-left ${
-                atStart ? "hidden-bg" : ""
-              }`}
+              className={`${hoverBgSize} bg-w-h-left`}
+              style={{ visibility: atStart ? "hidden" : "visible" }}
             ></div>
             <div
-              className={`${hoverBgSize} bg-w-h-right ${
-                atEnd ? "hidden-bg" : ""
-              }`}
+              className={`${hoverBgSize} bg-w-h-right`}
+              style={{ visibility: atEnd ? "hidden" : "visible" }}
             ></div>
           </div>
           <div className={`${ArrowMainClass} arrow-align-main`}>
             <div
-              className={`arrow-z ${atStart ? "hidden-arrow" : ""}`}
+              className="arrow-z"
+              style={{ visibility: atStart ? "hidden" : "visible" }}
               onClick={() => scroll("left")}
             >
               <MdArrowBackIos
@@ -98,7 +92,8 @@ export const MoviesList = ({
               />
             </div>
             <div
-              className={`arrow-z ${atEnd ? "hidden-arrow" : ""}`}
+              className="arrow-z"
+              style={{ visibility: atEnd ? "hidden" : "visible" }}
               onClick={() => scroll("right")}
             >
               <MdArrowForwardIos
@@ -111,16 +106,25 @@ export const MoviesList = ({
         </div>
       )}
 
-      {movies.lon[0].n && (
+      {movies.lon && movies.lon[0]?.n && (
         <SeeAll
           heading={movies.lon[0].n}
-          className={"movie-list-p-m"}
-          showSeeAll={movies.lon[0].n.length > 12 ? true : false}
+          className="movie-list-p-m"
+          showSeeAll={movies.lon[0].n.length > 12}
         />
       )}
 
-      <div className="hr-list-align" ref={scrollRef}>
-        {movies.cd.map((movie: any, index: any) => (
+      <div
+        className="hr-list-align"
+        ref={scrollRef}
+        style={{
+          display: "flex",
+          overflowX: "auto",
+          scrollBehavior: "smooth",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {movies.cd.map((movie: any, index: number) => (
           <MovieCard
             key={index}
             mainDivClass="img-div-hr"
