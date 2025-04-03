@@ -132,6 +132,7 @@
 }
 
 .add-arr-hover {
+  z-index: 6;
   transition: transform 0.2s;
   &:hover {
     transform: scale(1.2);
