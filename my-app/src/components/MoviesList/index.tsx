@@ -13,7 +13,7 @@ interface IMoviesList {
 }
 
 export const MoviesList = ({
-  data,
+  movies,
   listCardTitleClass = "",
   listCardDivClass = "",
   listCardImageClass = "",
@@ -21,7 +21,7 @@ export const MoviesList = ({
   hoverBgSize = "",
   ArrowMainClass = "",
 }: {
-  data: IMoviesList[];
+  movies: any;
   listCardTitleClass?: string;
   listCardDivClass?: string;
   listCardImageClass?: string;
@@ -68,9 +68,11 @@ export const MoviesList = ({
     }
   };
 
+  // console.log(movies.cd[0], "movies-data");
+
   return (
     <div className="movies-list-main">
-      {data.length > 6 && (
+      {movies.length > 6 && (
         <div className="add-rel-main">
           <div className={`${hoverBgClass} hover-bg-col-main`}>
             <div
@@ -109,25 +111,23 @@ export const MoviesList = ({
         </div>
       )}
 
-      {data.length && (
+      {movies.lon[0].n && (
         <SeeAll
-          heading={data[0]?.movieListHeader}
-          seeAll={data[0]?.seeAll}
+          heading={movies.lon[0].n}
           className={"movie-list-p-m"}
-          showSeeAll={data.length > 8 ? true : false}
+          showSeeAll={movies.lon[0].n.length > 12 ? true : false}
         />
       )}
+
       <div className="hr-list-align" ref={scrollRef}>
-        {data.map((item: IMoviesList, index: number) => (
+        {movies.cd.map((movie: any, index: any) => (
           <MovieCard
             key={index}
             mainDivClass="img-div-hr"
             imageDivClass={listCardDivClass}
             imageClass={`img-cls-hr ${listCardImageClass}`}
-            image={item.image}
-            value={item.value}
-            showPremium={item.Premium}
             cardTitleClass={listCardTitleClass}
+            movie={movie}
           />
         ))}
       </div>
