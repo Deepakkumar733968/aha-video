@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .left-pos-main {
@@ -20,6 +21,24 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 58px;
+}
+
+.bg-min-arr-size {
+  width: 36px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0.3;
+}
+
+.min-arr-l {
+  position: absolute;
+  top: 98px;
+  left: 4px;
+}
+
+.min-arr-r {
+  position: absolute;
+  left: 300px;
 }
 
 .pos-sup-hed {
@@ -70,8 +89,7 @@
 .bg-left-div-main {
   height: 100%;
   display: flex;
-  width: 100%;
-  /* width: 125%; */
+  width: 125%;
   flex-direction: column;
   justify-content: center;
   position: absolute;
@@ -105,7 +123,6 @@
 
 .all-btn-img-ali-main {
   position: relative;
-  /* min-width: 100%; */
   width: 96%;
   display: flex;
   align-items: center;
@@ -137,19 +154,3 @@
   box-shadow: 0 0 10px #0003;
   min-height: 50px;
 }
-
-/* border: 2px solid #fff;
-    border-radius: 12px;
-    padding: 3px;
-    transform: scale(1.1);
-    cursor: pointer;
-    transition: transform .3s ease, opacity .3s ease;
-    animation: _ngcontent-serverApp-c4212802764_showUp .3s ease;
-    
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 0 10px #0003;
-    min-height: 50px; */

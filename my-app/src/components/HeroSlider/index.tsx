@@ -54,6 +54,8 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
         </div>
       </div>
       <div className="all-btn-img-ali-main">
+        <div className="bg-min-arr-size min-arr-l min-arr-l-bg"></div>
+        <div className="bg-min-arr-size min-arr-r min-arr-r-bg"></div>
         <MdKeyboardArrowLeft
           size={26}
           className="add-arr-hover"
