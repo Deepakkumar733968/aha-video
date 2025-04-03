@@ -24,21 +24,35 @@
 }
 
 .bg-min-arr-size {
-  width: 36px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 0.3;
+  width: 22px;
+  height: 60px;
+}
+
+.min-arr-l-bg {
+  background: linear-gradient(
+    to right,
+    rgb(17, 18, 18) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+}
+
+.min-arr-r-bg {
+  background: linear-gradient(
+    to left,
+    rgb(17, 18, 18) 14%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .min-arr-l {
   position: absolute;
-  top: 98px;
-  left: 4px;
+  top: 94px;
+  left: 26px;
 }
 
 .min-arr-r {
   position: absolute;
-  left: 300px;
+  left: 293px;
 }
 
 .pos-sup-hed {
@@ -137,6 +151,15 @@
   &:hover {
     transform: scale(1.2);
   }
+}
+.arrow-left-pos {
+  position: relative;
+  left: 8px;
+}
+
+.arrow-right-pos {
+  position: relative;
+  right: 4px;
 }
 
 .selected {

@@ -58,7 +58,7 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
         <div className="bg-min-arr-size min-arr-r min-arr-r-bg"></div>
         <MdKeyboardArrowLeft
           size={26}
-          className="add-arr-hover"
+          className="add-arr-hover arrow-left-pos"
           onClick={prevSlide}
         />
         <div className="last-left-carousel-main">
@@ -75,7 +75,7 @@ export const HeroSlider = ({ data }: { data: IHeroCarousel[] }) => {
         </div>
         <MdKeyboardArrowRight
           size={26}
-          className="add-arr-hover"
+          className="add-arr-hover arrow-right-pos"
           onClick={nextSlide}
         />
       </div>
