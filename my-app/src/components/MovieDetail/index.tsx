@@ -66,56 +66,6 @@ export const MovieDetail = () => {
             <div className="selected-tap">Cast</div>
             <div className="not-selected-tap">Details</div>
           </div>
-          {/* <div className="taps-img-detail-main">
-            <div className="img-detail-ali">
-              <MovieCard
-                image={
-                  "https://image-resizer-cloud-api.akamaized.net/image/hari-baskar/0-1x1.jpg?width=230&updatedTime=2025-03-25T06:18:28Z"
-                }
-                value={"Hari Baskar"}
-                imageDivClass="mov-min-detail-size"
-                imageClass="add-mov-border"
-                cardTitleClass="mov-dea-title"
-                showPremium={false}
-              />
-              <MovieCard
-                image={
-                  "https://image-resizer-cloud-api.akamaized.net/image/losliya-%20mariyanesan/0-1x1.jpg?width=110&updatedTime=2025-03-25T06:18:28Z"
-                }
-                value={"Hari Baskar"}
-                imageDivClass="mov-min-detail-size"
-                imageClass="add-mov-border"
-                cardTitleClass="mov-dea-title"
-                showPremium={false}
-              />
-              <MovieCard
-                image={
-                  "https://image-resizer-cloud-api.akamaized.net/image/ilavarasu/0-1x1.jpg?width=110&updatedTime=2025-03-25T06:18:28Z"
-                }
-                value={"Hari Baskar"}
-                imageDivClass="mov-min-detail-size"
-                imageClass="add-mov-border"
-                cardTitleClass="mov-dea-title"
-                showPremium={false}
-              />
-              <MovieCard
-                image={
-                  "https://image-resizer-cloud-api.akamaized.net/image/shah-ra/0-1x1.jpg?width=110&updatedTime=2025-03-25T06:18:28Z"
-                }
-                value={"Hari Baskar"}
-                imageDivClass="mov-min-detail-size"
-                imageClass="add-mov-border"
-                cardTitleClass="mov-dea-title"
-                showPremium={false}
-              />
-            </div>
-            <div className="detail-text-ali">
-              <p className="detail-text-heading">Director</p>
-              <p className="detail-text-ans">Arun Ravichandran</p>
-              <p className="detail-text-heading">Studio</p>
-              <p className="detail-text-ans">Sri Thenandal Films</p>
-            </div>
-          </div> */}
         </div>
       </div>
       <div className="movie-l-a-r-main">

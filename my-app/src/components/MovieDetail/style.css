@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .movie-left-pos-main {
@@ -127,8 +128,8 @@
 .movie-bg-left-div-main {
   height: 100%;
   display: flex;
-  width: 100%;
-  /* width: 125%; */
+  /* width: 100%; */
+  width: 125%;
   flex-direction: column;
   justify-content: center;
   position: absolute;
