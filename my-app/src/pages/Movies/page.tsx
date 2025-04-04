@@ -1,8 +1,32 @@
+import { HeroSlider } from "../../components/HeroSlider";
+import { MoviesList } from "../../components/MoviesList";
+import { useLandingScreenData } from "../../hooks/useLandingScreenData";
 import "./style.css";
 const Movies = () => {
+  // const { data, loading, error } = useLandingScreenData();
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
+
+  // if (error) {
+  //   return <p>Error: {error}</p>;
+  // }
+
+  // if (!data) {
+  //   return <p>No data available</p>;
+  // }
+
+  // function containerData(containerNum: number) {
+  //   return data.t[1].c[containerNum];
+  // }
+
   return (
     <section>
-      <h1 style={{ display: "none" }}>Movies</h1>
+      {/* <HeroSlider heroCarousel={containerData(0)} />
+      <MoviesList movies={containerData(1)} />
+      <MoviesList movies={containerData(2)} />
+      <MoviesList movies={containerData(3)} />
+      <MoviesList movies={containerData(4)} /> */}
     </section>
   );
 };
