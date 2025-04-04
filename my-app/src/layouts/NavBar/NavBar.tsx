@@ -15,7 +15,7 @@ const NavBar = () => {
     const getData = async () => {
       try {
         const data = await fetchCatalogData();
-        console.log("Fetched data:", data);
+        // console.log("Fetched data:", data);
         setCatalog(Array.isArray(data) ? data : []);
       } catch (err) {
         const errorMessage =
