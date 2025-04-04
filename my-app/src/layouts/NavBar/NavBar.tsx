@@ -1,7 +1,7 @@
 import "./style.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchCatalogData } from "../../api";
+import { fetchCatalogData } from "../../services/api";
 import { useLocation } from "react-router-dom";
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>("");
