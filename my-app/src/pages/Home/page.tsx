@@ -21,7 +21,9 @@ const Home = () => {
   function containerData(containerNum: number) {
     return data.t[0].c[containerNum];
   }
-  // console.log(data.t[0].c[1].cd[0], "allDataOne");
+
+  // console.log(containerData(1), "checkData");
+  // console.log(data.t[0].c[1].cd[0].lon[0].n, "allDataOne");
   // console.log(data.t[0].c[4].cd[0], "allDataTwo");
 
   return (
