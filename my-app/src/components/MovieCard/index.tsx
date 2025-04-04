@@ -16,7 +16,7 @@ export const MovieCard = ({
   movie,
   cardTitleClass = "",
 }: ICardData) => {
-  console.log(movie.ent[0].sp, "movie-card-data");
+  // console.log(movie.ent[0].sp, "movie-card-data");
   return (
     <div className={`${mainDivClass} img-card-main`}>
       {!movie.ent[0].sp && (
