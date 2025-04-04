@@ -40,8 +40,7 @@ export const MovieCard = ({
         />
       </div>
       <p className={`img-crd-des ${cardTitleClass}`}>{movie.lon[0].n}</p>
-      {/* this is the A box in movies */}
-      {/* <p>movie</p> */}
+      {/* {movie.rat[0].v === "A" && <p>movie</p>} */}
     </div>
   );
 };
