@@ -39,8 +39,10 @@ export const MovieCard = ({
           className={`${imageClass} img-size`}
         />
       </div>
-      <p className={`img-crd-des ${cardTitleClass}`}>{movie.lon[0].n}</p>
-      {/* {movie.rat[0].v === "A" && <p>movie</p>} */}
+      <div className="mov-des-ali-main">
+        <p className={`img-crd-des ${cardTitleClass}`}>{movie.lon[0].n}</p>
+        {movie.rat[0].v === "A" && <p className="mov-lis-a">A</p>}
+      </div>
     </div>
   );
 };
