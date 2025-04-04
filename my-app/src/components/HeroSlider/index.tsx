@@ -61,8 +61,9 @@ export const HeroSlider = ({ heroCarousel }: { heroCarousel: any }) => {
           <h1 className="pos-hed">{title}</h1>
           <p className="pos-sup-hed">
             {subHeading} • {formattedDuration} •{" "}
-            {currentSlide?.lon?.find((item: any) => item.lang === "en")?.n ??
-              "Genre Unavailable"}
+            {currentSlide?.log
+              ?.find((item: any) => item.lang === "en")
+              ?.n.join(" • ") ?? "Genre Unavailable"}
           </p>
         </div>
         <p className="pos-des">{description}</p>
