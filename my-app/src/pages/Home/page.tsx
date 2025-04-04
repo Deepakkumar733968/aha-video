@@ -1,3 +1,4 @@
+import "./style.css";
 import { HeroSlider } from "../../components/HeroSlider";
 import { MoviesList } from "../../components/MoviesList";
 import { useLandingScreenData } from "../../hooks/useLandingScreenData";
