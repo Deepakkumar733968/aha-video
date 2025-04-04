@@ -1,6 +1,3 @@
-import { HeroSlider } from "../../components/HeroSlider";
-import { MoviesList } from "../../components/MoviesList";
-import { useLandingScreenData } from "../../hooks/useLandingScreenData";
 import "./style.css";
 const Movies = () => {
   // const { data, loading, error } = useLandingScreenData();
