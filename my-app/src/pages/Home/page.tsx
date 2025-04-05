@@ -18,7 +18,7 @@ const Home = () => {
         dataLength={data.length}
         next={fetchMore}
         hasMore={hasMore}
-        loader={<p className="text-center">Loading more movies...</p>}
+        loader={<p style={{ display: "none" }}>Loading more movies...</p>}
         scrollThreshold={0.9}
       >
         {data.slice(1).map((container, idx) => {
