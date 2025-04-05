@@ -9,9 +9,7 @@ const Home = () => {
 
   if (loading && data.length === 0) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-  // console.log(containerData(1), "checkData");
-  // console.log(data.t[0].c[1].cd[0].lon[0].n, "allDataOne");
-  // console.log(data.t[0].c[4].cd[0], "allDataTwo");
+
   return (
     <section>
       {data[0] && <HeroSlider heroCarousel={data[0]} />}
