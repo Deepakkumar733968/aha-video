@@ -10,7 +10,7 @@
   padding: 1rem 3rem;
   max-width: 50%;
   position: absolute;
-  top: 30%;
+  top: 2%;
   box-sizing: border-box;
   z-index: 6;
 }
@@ -269,6 +269,8 @@
 
 .mov-line-ali-main {
   margin-top: 1.1rem;
+  position: relative;
+  z-index: 60;
 }
 
 .taps-main {

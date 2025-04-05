@@ -61,12 +61,6 @@ export const MovieDetail = () => {
           </button>
           <p className="mov-share-button-main">Share</p>
         </div>
-        <div className="mov-line-ali-main">
-          <div className="taps-main">
-            <div className="selected-tap">Cast</div>
-            <div className="not-selected-tap">Details</div>
-          </div>
-        </div>
       </div>
       <div className="movie-l-a-r-main">
         <div className="movie-bg-left-div-main"></div>
@@ -75,6 +69,12 @@ export const MovieDetail = () => {
           {/* <video width="600" controls className="video-main">
             <source src={data[currentIndex]?.heroVideo} type="video/mp4" />
           </video> */}
+        </div>
+      </div>
+      <div className="mov-line-ali-main">
+        <div className="taps-main">
+          <div className="selected-tap">Cast</div>
+          <div className="not-selected-tap">Details</div>
         </div>
       </div>
     </section>
