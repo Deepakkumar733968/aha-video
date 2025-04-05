@@ -32,7 +32,7 @@ export const MovieCard = ({
       <div className={`${imageDivClass} img-main-div cursor-pointer`}>
         <img
           src={
-            constructImageUrl(`${movie.id}`, movie.ia[2], 305, `${movie.ut}`) ||
+            constructImageUrl(movie?.id || "", "0-2x3", 305, movie?.ut || "") ||
             "https://www.aha.video/aha-gray-logo.29a310bfcc08d0e8.svg"
           }
           alt="movie-card-image"
