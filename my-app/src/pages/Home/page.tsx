@@ -10,6 +10,7 @@ const Home = () => {
   if (loading && data.length === 0) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
+  // console.log(data, "data");
   return (
     <section>
       {data[0] && <HeroSlider heroCarousel={data[0]} />}
