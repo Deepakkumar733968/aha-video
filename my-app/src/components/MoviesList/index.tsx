@@ -110,7 +110,7 @@ export const MoviesList = ({
         <SeeAll
           heading={movies.lon[0].n}
           className="movie-list-p-m"
-          showSeeAll={movies.lon[0].n.length > 12}
+          showSeeAll={movies.cd.length > 6 && movies.lon[0].n.length > 12}
         />
       )}
 
