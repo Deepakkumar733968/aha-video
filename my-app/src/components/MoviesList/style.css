@@ -109,5 +109,10 @@
 @media (max-width: 900px) {
   .hr-list-align {
     padding: 0 16px;
+    padding-top: 15px;
+  }
+
+  .movie-list-p-m {
+    padding: 16px 16px 0;
   }
 }

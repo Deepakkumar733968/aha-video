@@ -16,3 +16,15 @@
     color: hsla(0, 0%, 100%, 0.8);
   }
 }
+
+@media (max-width: 900px) {
+  .see-all-left-header {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .see-all-right-header {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
