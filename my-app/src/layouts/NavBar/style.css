@@ -53,8 +53,6 @@
   background-color: #29292966;
   width: 6.1rem;
   height: 2.5rem;
-  display: flex;
-  align-items: center;
   border-radius: 0.625rem;
   font-family: proximaNova, sans-serif;
   overflow: hidden;
@@ -86,7 +84,6 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  text-decoration: none;
   white-space: nowrap;
   -webkit-user-select: none;
   user-select: none;
@@ -109,9 +106,8 @@
 }
 
 .subscribe-now-btn {
-  min-width: -webkit-max-content;
   min-width: max-content;
-  font-size: var(--header-text-size, 14px);
+  font-size: 14px;
   padding: 12px 23px;
   font-weight: 500;
   box-sizing: border-box;
@@ -119,13 +115,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 50px;
   line-height: 18px;
   color: #fff;
   font-family: proximaNova, sans-serif;
   background: linear-gradient(0deg, #b61a09 -86.4%, #ff6d2e);
-  border-radius: 50px;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 4px #00000040;
   border: none;
@@ -145,5 +139,109 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
+}
+
+.nav-hamburger-menu {
+  display: none;
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .nav-hamburger-menu {
+    display: block;
+  }
+
+  .nav-links-main {
+    display: none;
+  }
+
+  .right-section-main {
+    display: none;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 900px) {
+  .nav-hamburger-menu {
+    display: block;
+  }
+
+  .nav-links-main {
+    display: none;
+  }
+
+  .right-section-main {
+    display: none;
+  }
+
+  .all-btn-img-ali-main,
+  .left-pos-main,
+  .bg-left-div-main,
+  .m-left-main {
+    display: none;
+  }
+}
+
+@media (max-width: 429px) {
+  .nav-hamburger-menu {
+    display: block;
+  }
+
+  .nav-links-main {
+    display: none;
+  }
+
+  .right-section-main {
+    display: none;
+  }
+
+  .all-btn-img-ali-main,
+  .left-pos-main,
+  .m-left-main {
+    display: none;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background-color: #1d1e20;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+}
+
+.sidebar-open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin: 16px 0;
+}
+
+.sidebar-footer {
+  margin-top: 144px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.close-icon {
   cursor: pointer;
 }

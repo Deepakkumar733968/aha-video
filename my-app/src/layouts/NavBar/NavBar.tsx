@@ -1,21 +1,28 @@
 import "./style.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { fetchCatalogData } from "../../services/api";
-import { useLocation } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
+
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>("");
-
-  //
   const [catalog, setCatalog] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const data = await fetchCatalogData();
-        // console.log("Fetched data:", data);
         setCatalog(Array.isArray(data) ? data : []);
       } catch (err) {
         const errorMessage =
@@ -29,13 +36,15 @@ const NavBar = () => {
     getData();
   }, []);
 
-  //
-
-  const location = useLocation();
-
   useEffect(() => {
-    setActiveLink(location.pathname);
-  }, [location]);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 2);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   interface IfooterList {
     link: string;
     text: string;
@@ -49,25 +58,10 @@ const NavBar = () => {
     { link: "/myaha", text: "My aha" },
   ];
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 2) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <nav className={`nav-main ${isScrolled ? "no-scroll" : "scroll"}`}>
-      <div className="left-section-main">
-        <div>
+    <>
+      <nav className={`nav-main ${isScrolled ? "no-scroll" : "scroll"}`}>
+        <div className="left-section-main">
           <Link to={"/"}>
             <img
               src="https://www.aha.video/aha-logo.2a3e1475cd784cdc.svg"
@@ -75,8 +69,6 @@ const NavBar = () => {
               className="aha-logo cursor-pointer"
             />
           </Link>
-        </div>
-        <div>
           <ul className="nav-links-main">
             {footerList.map(({ link, text }, index) => (
               <li key={index}>
@@ -91,40 +83,79 @@ const NavBar = () => {
             ))}
           </ul>
         </div>
-      </div>
-      <div className="right-section-main">
-        <div>
+
+        <div className="right-section-main">
           <img
             src="https://www.aha.video/search.7e86b88a45d35825.svg"
             className="ser-icon cursor-pointer"
             alt="search-icon"
           />
-        </div>
-        <div className="lan-aling-main cursor-pointer">
-          <h6 className="lan-arrow">Tamil</h6>
-          <img
-            src="https://www.aha.video/chevron-down.29e402b0e14e4df7.svg"
-            alt="arrow-icon"
-            className="town-arrow-size"
-          />
-        </div>
-        {/* <select className="lan-aling-main cursor-pointer">
-          <option value="tamil">Tamil</option>
-          <option value="english">English</option>
-        </select> */}
-        <button className="subscribe-now-btn">Subscribe Now</button>
-        <div className="img-in-hum-sign-main">
-          <div className="hum-bg-main">
+          <div className="lan-aling-main cursor-pointer">
+            <h6 className="lan-arrow">Tamil</h6>
             <img
-              src="https://www.aha.video/user-icon.a6b5f30360c95e43.svg"
-              alt="user-icon"
-              className="hum-img-log"
+              src="https://www.aha.video/chevron-down.29e402b0e14e4df7.svg"
+              alt="arrow-icon"
+              className="town-arrow-size"
             />
           </div>
-          <p className="sign-in-text">Sign In</p>
+          <button className="subscribe-now-btn">Subscribe Now</button>
+          <div className="img-in-hum-sign-main">
+            <div className="hum-bg-main">
+              <img
+                src="https://www.aha.video/user-icon.a6b5f30360c95e43.svg"
+                alt="user-icon"
+                className="hum-img-log"
+              />
+            </div>
+            <p className="sign-in-text">Sign In</p>
+          </div>
+        </div>
+
+        <GiHamburgerMenu
+          className="nav-hamburger-menu"
+          size={28}
+          color="white"
+          onClick={() => setIsSidebarOpen(true)}
+        />
+      </nav>
+
+      <div className={`sidebar ${isSidebarOpen ? "sidebar-open" : ""}`}>
+        <div className="sidebar-header">
+          <IoMdClose
+            size={28}
+            color="white"
+            onClick={() => setIsSidebarOpen(false)}
+            className="close-icon"
+          />
+        </div>
+        <ul className="sidebar-links">
+          {footerList.map(({ link, text }, index) => (
+            <li key={index}>
+              <Link
+                to={link}
+                className="f-link"
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="sidebar-footer">
+          <button className="subscribe-now-btn">Subscribe Now</button>
+          <div className="img-in-hum-sign-main">
+            <div className="hum-bg-main">
+              <img
+                src="https://www.aha.video/user-icon.a6b5f30360c95e43.svg"
+                alt="user-icon"
+                className="hum-img-log"
+              />
+            </div>
+            <p className="sign-in-text">Sign In</p>
+          </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

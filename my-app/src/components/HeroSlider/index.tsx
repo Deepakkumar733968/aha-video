@@ -58,24 +58,24 @@ export const HeroSlider = ({ heroCarousel }: { heroCarousel: any }) => {
     >
       <div className="left-pos-main">
         <div>
-          <h1 className="pos-hed">{title}</h1>
-          <p className="pos-sup-hed">
+          <h1 key={`title-${currentIndex}`} className="pos-hed text-loading">
+            {title}
+          </h1>
+          <p key={`sub-${currentIndex}`} className="pos-sup-hed text-loading">
             {subHeading} • {formattedDuration} •{" "}
             {currentSlide?.log
               ?.find((item: any) => item.lang === "en")
               ?.n.join(" • ") ?? "Genre Unavailable"}
           </p>
         </div>
-        <p className="pos-des">{description}</p>
+        <p key={`desc-${currentIndex}`} className="pos-des text-loading">
+          {description}
+        </p>
       </div>
       <div className="l-a-r-main">
         <div className="bg-left-div-main"></div>
         <div className="m-left-main"></div>
-        <div className="m-right-main">
-          {/* <video width="600" controls className="video-main">
-            <source src={currentSlide?.heroVideo} type="video/mp4" />
-          </video> */}
-        </div>
+        <div className="m-right-main"></div>
       </div>
       <div className="all-btn-img-ali-main">
         <div className="bg-min-arr-size min-arr-l min-arr-l-bg"></div>
@@ -102,6 +102,15 @@ export const HeroSlider = ({ heroCarousel }: { heroCarousel: any }) => {
           className="add-arr-hover arrow-right-pos"
           onClick={nextSlide}
         />
+      </div>
+
+      <div className="mobile-indicator">
+        {slides.map((_: any, index: number) => (
+          <span
+            key={index}
+            className={`dot ${index === currentIndex ? "active" : ""}`}
+          />
+        ))}
       </div>
     </div>
   );

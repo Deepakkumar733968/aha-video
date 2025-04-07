@@ -105,3 +105,9 @@
 .img-div-hr:hover {
   transform: translateY(-16px);
 }
+
+@media (max-width: 900px) {
+  .hr-list-align {
+    padding: 0 16px;
+  }
+}
